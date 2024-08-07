@@ -6,7 +6,8 @@
 .main{
     padding: 15px;
 
-    height: 100vh;
+    min-height: 100vh;
+    height: 100%;
     width: 100%;
 
     background: black;
@@ -56,7 +57,7 @@
 
     background: rgba(35, 35, 35, 1);
 
-    border-radius: 0 20px 20px 20px;
+    border-radius: 5px 20px 20px 20px;
     box-shadow: 12px 12px 20px rgba(101, 50, 248, 0.5);
 }
 
@@ -74,16 +75,18 @@
 }
 
 .input{
+    font-family: 'Arimo';
+
     width: 100%;
     max-width: 410px;
     height: 45px;
 
     background: none;
     border: none;
-    border-bottom: 2px solid rgba(243, 246, 249, 1);
+    border-bottom: 2px solid rgba(243, 246, 249, 0.3);
+    outline: none;
 
-    opacity: 30%;
-
+    color: rgba(243, 246, 249, 1);
     font-weight: 400;
     font-size: 30px;
     letter-spacing: -0.02em;
@@ -95,13 +98,20 @@
 
     border-radius: 100%;
     background: rgba(101, 50, 248, 1);
-    border: none;
+    border: 1px solid transparent;
 
     background-image: url(../public/btnAdd.png);
     background-repeat: no-repeat;
     background-position: center;
-
     background-size: 30px;
+
+    transition: border-color 1s ease;
+}
+
+.btn-add:hover{
+    border: 1px solid rgba(243, 246, 249, 0.5);
+
+    transition: border-color 1s ease;
 }
 
 .output{
@@ -160,7 +170,7 @@
     opacity: 30%;
 }
 
-.checkbox:checked{
+.checkbox-checked{
     width: 19px;
     height: 19px;
 
@@ -184,6 +194,17 @@
     opacity: 50%;
 }
 
+.output-empty{
+    margin-top: 75px;
+
+    font-weight: 700;
+    font-size: 40px;
+    letter-spacing: -0.04em;
+    color: rgba(101, 50, 248, 0.2);
+
+    text-align: center;
+}
+
 @media (max-width: 980px){
     .main{
         padding: 50px;
@@ -205,6 +226,10 @@
         height: 40px;
 
         background-size: 20px;
+    }
+
+    .output-empty{
+        margin-top: 100px;
     }
 }
 
